@@ -1,4 +1,3 @@
-from abc import dataclass, abstractmethod, classmethod
 
 @dataclass(order=True)
 class Fractional():
