@@ -13,8 +13,15 @@ class Fractional():
     
     def __repr__(self):
         return f"Fractional({self.x}, {self.y})"
+    
+    def __add__(self, fract):
+        x_n = self.x * fract.y + self.y * fract.x
+        y_n = self.y * fract.y
+    
+        return Fractional(x_n, y_n)
 
 
-x1 = Fractional(69, 420)
-x2 = Fractional(420, 69)
+x1 = Fractional(1, 4)
+x2 = Fractional(2, 3)
 x3 = x1 + x2
+print(x3)
