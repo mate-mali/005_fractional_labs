@@ -5,7 +5,10 @@ class Fractional():
 
     def __init__(self, x:int, y:int):
         self.x = x
+        if y == 0:
+            raise ValueError("Y value of fractional cannoot be zero!")
         self.y = y
+
     
     def __str__(self):
         return f"{self.x}/{self.y}"
@@ -28,7 +31,7 @@ class Fractional():
         y_n = self.y * fract.y
         return Fractional(x_n, y_n)
     
-    def __divide__(self, fract):
+    def __truediv__(self, fract):
         x_n = self.x * fract.y
         y_n = self.y * fract.x
         return Fractional(x_n, y_n)
@@ -55,3 +58,5 @@ print(x5.to_decimal())
 x6 = x1 / x2
 print(x6)
 print(x6.to_decimal())
+
+x7 = Fractional(20, 0)
