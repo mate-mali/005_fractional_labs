@@ -1,4 +1,3 @@
-
 class Fractional():
     
     x: int
@@ -17,7 +16,21 @@ class Fractional():
     def __add__(self, fract):
         x_n = self.x * fract.y + self.y * fract.x
         y_n = self.y * fract.y
+        return Fractional(x_n, y_n)
     
+    def __mul__(self, fract):
+        x_n = self.x * fract.x
+        y_n = self.y * fract.y
+        return Fractional(x_n, y_n)
+    
+    def __sub__(self, fract):
+        x_n = self.x * fract.y - self.y * fract.x
+        y_n = self.y * fract.y
+        return Fractional(x_n, y_n)
+    
+    def __divide__(self, fract):
+        x_n = self.x * fract.y
+        y_n = self.y * fract.x
         return Fractional(x_n, y_n)
     
     def to_decimal(self):
@@ -26,7 +39,19 @@ class Fractional():
 
 x1 = Fractional(1, 4)
 x2 = Fractional(2, 3)
-x3 = x1 + x2
 
+x3 = x1 + x2
 print(x3)
 print(x3.to_decimal())
+
+x4 = x1 * x2
+print(x4)
+print(x4.to_decimal())
+
+x5 = x1 - x2
+print(x5)
+print(x5.to_decimal())
+
+x6 = x1 / x2
+print(x6)
+print(x6.to_decimal())
