@@ -3,7 +3,7 @@ class Fractional():
     x: int
     y: int
 
-    def __init__(self, x:int, y:int):
+    def __init__(self, x:int, y:int = 1 ):
         self.x = x
         if y == 0:
             raise ValueError("Y value of fractional cannoot be zero!")
@@ -38,6 +38,9 @@ class Fractional():
     
     def to_decimal(self):
         return self.x / self.y
+    
+    def __lt__(self, fract):
+        return self.to_decimal() == fract.to_decimal()
 
 
 x1 = Fractional(1, 4)
@@ -59,4 +62,9 @@ x6 = x1 / x2
 print(x6)
 print(x6.to_decimal())
 
-x7 = Fractional(20, 0)
+x7 = Fractional(2,8)
+print(x1 == x7)
+
+#x7 = Fractional(20, 0)
+
+#TODO: add handling whole numbers, addign with integers or other sht
