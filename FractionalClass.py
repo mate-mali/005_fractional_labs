@@ -19,9 +19,14 @@ class Fractional():
         y_n = self.y * fract.y
     
         return Fractional(x_n, y_n)
+    
+    def to_decimal(self):
+        return self.x / self.y
 
 
 x1 = Fractional(1, 4)
 x2 = Fractional(2, 3)
 x3 = x1 + x2
+
 print(x3)
+print(x3.to_decimal())
