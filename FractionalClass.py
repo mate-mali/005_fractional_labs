@@ -1,5 +1,4 @@
 
-@dataclass(order=True)
 class Fractional():
     
     x: int
@@ -17,5 +16,5 @@ class Fractional():
 
 
 x1 = Fractional(69, 420)
-print(x1)
-print(x1.__repr__())
+x2 = Fractional(420, 69)
+x3 = x1 + x2
